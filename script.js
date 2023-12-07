@@ -1,9 +1,9 @@
 
 let positionArray=[
-    `perspective(500px) translateZ(200px) translateX(0px) `,
-    `perspective(500px) translateZ(120px) translateX(-200px) `,
-    `perspective(500px) translateZ(0px) translateX(-420px) `,`perspective(500px) translateZ(-120px) translateX(-200px) `,`perspective(500px) translateZ(-200px) `,
-    `perspective(500px) translateZ(-120px) translateX(200px) `,`perspective(500px) translateZ(0px) translateX(420px) `,`perspective(500px) translateZ(120px) translateX(200px) `
+    `perspective(450px) translateZ(200px) translateX(0px) `,
+    `perspective(450px) translateZ(120px) translateX(-200px) `,
+    `perspective(450px) translateZ(0px) translateX(-420px) `,`perspective(450px) translateZ(-120px) translateX(-200px) `,`perspective(450px) translateZ(-200px) `,
+    `perspective(450px) translateZ(-120px) translateX(200px) `,`perspective(450px) translateZ(0px) translateX(420px) `,`perspective(450px) translateZ(120px) translateX(200px) `
     ]
     let currentHead=1;
     function next(){

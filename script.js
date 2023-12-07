@@ -1,44 +1,35 @@
 
-const wrapper = document.querySelector('#wrapper')
-const carousel = document.querySelector('#image-carousel')
-const images = document.querySelectorAll('img')
-const btn = document.querySelectorAll('button')
-const previous = document.querySelector('#prev')
-const nxt = document.querySelector('#next')
-
-
-images.forEach((slide,index)=>{
-    slide.style.left = `${index * 100}%`
-})
-let counter = 0;
-
-const slideImage = ()=>{
-    images.forEach(
-        (e) => {
-            e.style.transform = `translateX(-${counter*100}%)`
+let positionArray=[
+    `perspective(500px) translateZ(200px) translateX(0px) `,
+    `perspective(500px) translateZ(120px) translateX(-200px) `,
+    `perspective(500px) translateZ(0px) translateX(-420px) `,`perspective(500px) translateZ(-120px) translateX(-200px) `,`perspective(500px) translateZ(-200px) `,
+    `perspective(500px) translateZ(-120px) translateX(200px) `,`perspective(500px) translateZ(0px) translateX(420px) `,`perspective(500px) translateZ(120px) translateX(200px) `
+    ]
+    let currentHead=1;
+    function next(){
+        for(let i=0;i<=7;i++){
+            let ele=document.getElementById(`${i+1}`);
+            ele.style.transform=`${positionArray[(currentHead+i)%8]}`;
+            
         }
-    )
-}
-
-
-
-const prev = ()=>{
-    if(counter > 0){
-        
-        counter --;
-        slideImage();
-        console.log(counter);
-        
+        currentHead+=1;
     }
-}
-const next = ()=>{
-    if(counter <= (images.length - 2)){
-        
-        counter ++;
-        slideImage();
-        console.log(counter);
-        
+    function prev(){
+        // for(let i=0;i<=7;i++){
+            currentHead-=1;
+            let ele=document.getElementById(`${3}`);
+            let posIndex=(7-Math.abs(currentHead)%8+1);
+            console.log(currentHead,posIndex)
+    
+            
+    
+            ele.style.transform=`${positionArray[posIndex>=8?0:posIndex]}`;
+            
+        // }
     }
-}
-
-        
+    
+    function selectedEle(e){
+        console.log(e.target)
+        currentHead=Number(e.target.id)
+        next()
+    }

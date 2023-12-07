@@ -28,7 +28,7 @@ body,html{
 }
 
 
-@media screen and (min-width:960px) {
+@media (min-width:960px) {
 
     .frame div{
         width: 300px !important;
